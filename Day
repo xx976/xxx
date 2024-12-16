@@ -2,7 +2,7 @@
 ruleset=📘 GitHub,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list
 ruleset=👯‍♂️ TikTok,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list
 ruleset=🙋 Telegram,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list
-ruleset=📺 YouTube,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list
+ruleset=📀 流媒体,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list
 ruleset=📀 流媒体,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list
 ruleset=Spotify,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list
 ruleset=🌍 国外,https://ghp.ci/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Proxy.list
@@ -12,12 +12,11 @@ ruleset=➡️ 国内,[]FINAL
 ;2、策略组（域名组-节点组）
 custom_proxy_group=📘 GitHub`select`[]DIRECT`[]所有-自动`[]REJECT
 custom_proxy_group=👯‍♂️ TikTok`select`[]DIRECT`[]所有-自动`[]REJECT
-custom_proxy_group=📺 YouTube`select`[]DIRECT`[]所有-自动`[]REJECT
 custom_proxy_group=Spotify`select`[]DIRECT`[]所有-自动`[]REJECT
 custom_proxy_group=🙋 Telegram`select`[]DIRECT`[]所有-自动`[]REJECT
 custom_proxy_group=📀 流媒体`select`[]DIRECT`[]所有-自动`[]REJECT
 custom_proxy_group=🌍 国外`select`[]DIRECT`[]所有-自动`[]港台日新韩-自动`[]REJECT
-custom_proxy_group=➡️ 国内`select`[]DIRECT`[]所有-自动`[]港台日新韩-自动`[]台日新韩-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]其他-自动`[]REJECT
+custom_proxy_group=➡️ 国内`select`[]DIRECT`[]所有-自动`[]港台日新韩-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]其他-自动`[]REJECT
 
 ;3、节点组
 custom_proxy_group=所有-自动`url-test`.*`http://www.gstatic.com/generate_204`60,150
