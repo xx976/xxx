@@ -1,0 +1,102 @@
+; 1. 域名组（ruleset）
+ruleset=📘 GitHub,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list
+ruleset=GPT,https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI.list
+ruleset=👯‍♂️ TikTok,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list
+ruleset=🙋 Telegram,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list
+ruleset=📺 YouTube,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list
+ruleset=Spotify,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list
+ruleset=🌍 国外,https://ghp.ci/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Proxy.list
+ruleset=🌍 国外,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list
+ruleset=➡️ 国内,[]FINAL
+ruleset=🚫 广告屏蔽,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdBlock/AdBlock.list
+
+; 2. 策略组（域名组 - 节点组）
+custom_proxy_group=📘 GitHub`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+custom_proxy_group=GPT`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+custom_proxy_group=Spotify`select`[]DIRECT`[]所有-自动`[]美国-自动`[]香港-自动`[]新加坡-自动`[]REJECT
+custom_proxy_group=📺 YouTube`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+custom_proxy_group=👯‍♂️ TikTok`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+custom_proxy_group=🙋 Telegram`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+custom_proxy_group=🌍 国外`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+custom_proxy_group=➡️ 国内`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+
+; 3. 节点组（url-test 配置）
+custom_proxy_group=所有-自动`url-test`.*`http://www.gstatic.com/generate_204`30,50
+custom_proxy_group=香港-自动`url-test`(广港|香港|HK|Hong Kong|🇭🇰|HongKong)`http://www.gstatic.com/generate_204`30,50
+custom_proxy_group=台湾-自动`url-test`(广台|台湾|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan)`http://www.gstatic.com/generate_204`30,50
+custom_proxy_group=日本-自动`url-test`(广日|日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan)`http://www.gstatic.com/generate_204`30,50
+custom_proxy_group=新加坡-自动`url-test`(广新|新加坡|SG|坡|狮城|🇸🇬|Singapore)`http://www.gstatic.com/generate_204`30,50
+custom_proxy_group=韩国-自动`url-test`(广韩|韩国|KR|首尔|春川|🇰🇷|Korea)`http://www.gstatic.com/generate_204`30,50
+custom_proxy_group=美国-自动`url-test`(广美|美|US|纽约|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|United States)`http://www.gstatic.com/generate_204`30,50
+
+; 4. 启用规则集
+enable_rule_generator=true
+overwrite_original_rules=true
+
+; 5. 广告屏蔽规则（去广告）
+rules:
+  # 屏蔽广告相关域名
+  - DOMAIN-KEYWORD,ads,REJECT
+  - DOMAIN-KEYWORD,tracking,REJECT
+  - DOMAIN-KEYWORD,analytics,REJECT
+  - DOMAIN-KEYWORD,advertisement,REJECT
+  - DOMAIN-KEYWORD,ad,REJECT
+
+  # 屏蔽常见广告域名
+  - DOMAIN,ad.doubleclick.net,REJECT
+  - DOMAIN,googleads.g.doubleclick.net,REJECT
+  - DOMAIN,partner.googleadservices.com,REJECT
+  - DOMAIN-KEYWORD,googlesyndication,REJECT
+  - DOMAIN,pagead2.googlesyndication.com,REJECT
+  - DOMAIN,securepubads.g.doubleclick.net,REJECT
+  - DOMAIN-SUFFIX,youtube.com,REJECT
+  - DOMAIN-SUFFIX,vimeo.com,REJECT
+
+  # 屏蔽国内广告相关域名
+  - DOMAIN,baidu.com,REJECT
+  - DOMAIN,360.cn,REJECT
+  - DOMAIN,tencent.com,REJECT
+  - DOMAIN,ad.toutiao.com,REJECT
+  - DOMAIN,m.360.cn,REJECT
+  - DOMAIN,ads.tj.qq.com,REJECT
+  - DOMAIN,ad.taobao.com,REJECT
+
+  # 屏蔽番茄小说广告域名
+  - DOMAIN,fgjzxy.com,REJECT
+  - DOMAIN,tomato95.com,REJECT
+  - DOMAIN,fgjxsy.com,REJECT
+  - DOMAIN,ad.tomato95.com,REJECT
+  - DOMAIN,fgjxsy.sinaapp.com,REJECT
+  - DOMAIN,cdn.tomatocdn.com,REJECT
+  - DOMAIN,log.tomato95.com,REJECT
+  - DOMAIN,app.tomato95.com,REJECT
+  - DOMAIN,hd.tomatocdn.com,REJECT
+
+  # 去开屏广告相关域名（这些广告服务常用于应用的开屏广告）
+  - DOMAIN,ads.sina.com.cn,REJECT      # 新浪广告
+  - DOMAIN,ads.qq.com,REJECT           # 腾讯广告
+  - DOMAIN,ad.xiaomi.com,REJECT        # 小米广告
+  - DOMAIN,ad.taobao.com,REJECT        # 淘宝广告
+  - DOMAIN,ad.huawei.com,REJECT        # 华为广告
+  - DOMAIN,appads.com,REJECT           # 通用开屏广告
+  - DOMAIN,openx.net,REJECT            # OpenX 广告
+  - DOMAIN,adcolony.com,REJECT         # AdColony 广告
+
+  # 去京东开屏广告相关域名
+  - DOMAIN,union.jd.com,REJECT         # 京东广告联盟
+  - DOMAIN,ad.jd.com,REJECT            # 京东广告
+  - DOMAIN,ads.jd.com,REJECT           # 京东广告
+  - DOMAIN,open.jd.com,REJECT          # 京东开屏广告
+  - DOMAIN,m.jd.com,REJECT            # 京东移动端广告
+  - DOMAIN,app.jd.com,REJECT           # 京东 app 广告
+
+  # 默认规则：未匹配到的流量走代理
+  - MATCH,Auto
+
+; 6. DNS 配置
+dns:
+  enable: true
+  nameserver:
+    - 1.1.1.1       # Cloudflare DNS
+    - 8.8.8.8       # Google DNS
+    - 114.114.114.
