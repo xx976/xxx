@@ -19,7 +19,7 @@ custom_proxy_group=👯‍♂️ TikTok`select`[]DIRECT`[]所有-自动`[]香港
 custom_proxy_group=🙋 Telegram`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 custom_proxy_group=🌍 国外`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 custom_proxy_group=➡️ 国内`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
-
+custom_proxy_group=🚫 广告屏蔽`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 ; 3. 节点组（url-test 配置）
 custom_proxy_group=所有-自动`url-test`.*`http://www.gstatic.com/generate_204`30,50
 custom_proxy_group=香港-自动`url-test`(广港|香港|HK|Hong Kong|🇭🇰|HongKong)`http://www.gstatic.com/generate_204`30,50
