@@ -13,7 +13,7 @@ ruleset=🚫 广告屏蔽,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/
 ; 2. 策略组（域名组 - 节点组）
 custom_proxy_group=📘 GitHub`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 custom_proxy_group=GPT`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
-custom_proxy_group=Spotify`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
+custom_proxy_group=Spotify`select`[]DIRECT`[]所有-自动`[]美国-自动`[]香港-自动`[]新加坡-自动`[]REJECT
 custom_proxy_group=📺 YouTube`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 custom_proxy_group=👯‍♂️ TikTok`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 custom_proxy_group=🙋 Telegram`select`[]DIRECT`[]所有-自动`[]香港-自动`[]台湾-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
@@ -72,6 +72,16 @@ rules:
   - DOMAIN,app.tomato95.com,REJECT
   - DOMAIN,hd.tomatocdn.com,REJECT
 
+  # 去开屏广告相关域名（这些广告服务常用于应用的开屏广告）
+  - DOMAIN,ads.sina.com.cn,REJECT      # 新浪广告
+  - DOMAIN,ads.qq.com,REJECT           # 腾讯广告
+  - DOMAIN,ad.xiaomi.com,REJECT        # 小米广告
+  - DOMAIN,ad.taobao.com,REJECT        # 淘宝广告
+  - DOMAIN,ad.huawei.com,REJECT        # 华为广告
+  - DOMAIN,appads.com,REJECT           # 通用开屏广告
+  - DOMAIN,openx.net,REJECT            # OpenX 广告
+  - DOMAIN,adcolony.com,REJECT         # AdColony 广告
+
   # 默认规则：未匹配到的流量走代理
   - MATCH,Auto
 
@@ -84,19 +94,4 @@ dns:
     - 114.114.114.114 # 114DNS
     - 223.5.5.5     # 阿里 DNS
   fallback:
-    - 8.8.4.4       # Google DNS
-    - 1.0.0.1       # Cloudflare DNS
-  fallback-filter:
-    geoip: false
-    ipcidr: []
-  udp: true
-  ipv6: false
-
-; 7. Spotify 解锁会员规则
-rules:
-  # Spotify 解锁规则：去除广告
-  - DOMAIN-KEYWORD,spotify,REJECT   # 屏蔽所有 Spotify 相关的广告请求
-  - DOMAIN,spclient.wg.spotify.com,REJECT # 去除 Spotify 的广告资源
-  - DOMAIN,ads.spotify.com,REJECT   # 屏蔽 Spotify 广告域名
-  - DOMAIN,spcdn.apple.com,REJECT   # 去除 CDN 相关请求
- 
+    -
