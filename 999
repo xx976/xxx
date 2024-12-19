@@ -10,7 +10,7 @@ ruleset=🌍 国外,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_ru
 ruleset=➡️ 国内,[]FINAL
 ruleset=🚫 广告屏蔽,https://ghp.ci/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdBlock/AdBlock.list
 
-; 2. 策略组（域名组 - 节点组）
+; 2. 策略组（节点组）
 custom_proxy_group=📘 GitHub`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 custom_proxy_group=GPT`select`[]DIRECT`[]所有-自动`[]香港-自动`[]日本-自动`[]新加坡-自动`[]韩国-自动`[]美国-自动`[]REJECT
 custom_proxy_group=Spotify`select`[]DIRECT`[]所有-自动`[]美国-自动`[]香港-自动`[]新加坡-自动`[]REJECT
@@ -92,11 +92,3 @@ rules:
 
   # 默认规则：未匹配到的流量走代理
   - MATCH,Auto
-
-; 6. DNS 配置
-dns:
-  enable: true
-  nameserver:
-    - 1.1.1.1       # Cloudflare DNS
-    - 8.8.8.8       # Google DNS
-    - 114.114.114.
